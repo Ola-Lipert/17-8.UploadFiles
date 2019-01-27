@@ -1,5 +1,5 @@
-var fs = require('fs');
 var formidable = require('formidable');
+var fs = require('fs');
 
 exports.upload = function(request, response) {
     console.log("Rozpoczynam obsługę żądania upload.");
@@ -11,7 +11,7 @@ exports.upload = function(request, response) {
         response.write("<img src='/show' />");
         response.end();
     });
-}
+};
 
 exports.welcome = function(request, response) {
     console.log("Rozpoczynam obsługę żądania welcome.");
@@ -20,7 +20,7 @@ exports.welcome = function(request, response) {
         response.write(html);
         response.end();
     });
-}
+};
 
 exports.show = function(request, response) {
     fs.readFile("test.png", "binary", function(error, file) {
@@ -28,11 +28,11 @@ exports.show = function(request, response) {
         response.write(file, "binary");
         response.end();
     });
-}
+};
 
 
 exports.error = function(request, response) {
     console.log("Nie wiem co robić.");
     response.write("404 :(");
     response.end();
-}
+};
